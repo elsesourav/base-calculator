@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: #24292e;
+  text-align: center;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #24292e;
+}
+#contaner {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 6px;
+    width: 90%;
+    text-decoration: none;
+}
+span {
+    font-family: "Courier New", Courier, monospace;
+}
+.fild {
+    border: solid 2px #000fff;
+    width: 90vw;
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.fild span:first-child {
+    position: relative;
+    background-color: #000fff;
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.fild span:last-child {
+    color: #adff2f;
+    padding: 0 3px;
+}
+.fild:nth-child(2) {
+    border: 2px solid #009fff;
+}
+.fild:nth-child(2) span:first-child {
+    background-color: #009fff;
+}
+.fild:nth-child(3) {
+    border: 2px solid #ff9000;
+}
+.fild:nth-child(3) span:first-child {
+    background-color: #ff9000;
+}
+.fild:nth-child(4) {
+    border: 2px solid #00c6b3;
+}
+.fild:nth-child(4) span:first-child {
+    background-color: #00c6b3;
+}
+.result {
+    width: 30%;
+    text-align: center;
+    overflow-x: scroll;
+    display: none;
+    justify-content: center;
+    /* display: flex; */
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result {
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
