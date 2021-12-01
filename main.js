@@ -138,8 +138,6 @@ inputs.forEach((e, i) => {
       for (let i = 0; i < outputs.length; i++) {
         result[i] = outputs[i][2];
       }
-
-      console.log(result);
       if (result[1] == "/" || result[1] == "÷") {
         ss = result[0] / result[2];
       } else if (result[1] == "×" || result[1] == "*") {
@@ -156,7 +154,7 @@ inputs.forEach((e, i) => {
       res[0].innerText = base10_to2(Number(ss.toFixed(2)));
       res[1].innerText = base10_to8(Number(ss.toFixed(2)));
       res[2].innerText = Number(ss.toFixed(2));
-      res[3].innerText = base10_to16(Number(ss.toFixed(2)));
+      res[3].innerText = base10_to16(Number(ss.toFixed(2))).toUpperCase();
     }
   });
 });
