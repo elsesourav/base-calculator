@@ -30,12 +30,14 @@ span {
 }
 .fild {
     border: solid 2px #000fff;
-    width: 90vw;
+    width: 98vw;
     border-radius: 5px;
     height: 40px;
     display: flex;
     align-items: center;
     margin: 5px 0;
+    box-shadow: 0 0.9px 4px #000000;
+    background: #24292e;
 }
 .fild span:first-child {
     position: relative;
@@ -76,7 +78,6 @@ span {
     overflow-x: scroll;
     display: none;
     justify-content: center;
-    /* display: flex; */
 }
 
 .result::-webkit-scrollbar {
