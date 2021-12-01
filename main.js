@@ -1,31 +1,14 @@
 "use strict";
 
-const inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll(".inpts");
 const res = document.querySelectorAll(".result");
+const contaner = document.getElementById("contaner");
 
 let pattern = [
   /^[0-1, \+, \-, \*, \/, \×, \÷]{0,100}$/,
   /^[0-7, \+, \-, \*, \/, \×, \÷]{0,100}$/,
   /^[0-9, \+, \-, \*, \/, \×, \÷]{0,100}$/,
   /^[0-9,A,B,C,D,E,F, \+, \-, \*, \/, \×, \÷]{0,100}$/,
-];
-let mod = [
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
 ];
 let array = "";
 inputs.forEach((e, i) => {
@@ -60,7 +43,8 @@ inputs.forEach((e, i) => {
     let string = "";
     for (let i = 0; i < nv.length; i++) {
       modIndex[i] = [];
-      if (isNaN(nv[i])) {
+      let s = base16_to10(nv[i]);
+      if (isNaN(s)) {
         modIndex[0].push(i);
       }
     }
@@ -93,7 +77,8 @@ inputs.forEach((e, i) => {
 
     for (let i = 0; i < nstring.length; i++) {
       bases[i] = [];
-      if (isNaN(nstring[i])) {
+      let s = base16_to10(nstring[i]);
+      if (isNaN(s)) {
         bases[i] = nstring[i];
       } else {
         if (inputs[0] == e) {
@@ -119,22 +104,22 @@ inputs.forEach((e, i) => {
       outputs[i].push(bases[i]);
       outputs[i].push(base10_to16(bases[i]).toUpperCase());
     }
+    let opLength = outputs.length;
     outputs.forEach((E) => {
       E.forEach((out, i) => {
+        let op = opLength == 2 && i == 1 ? `${out} <br>` : out;
         inputs[i].value += out;
       });
     });
 
     let result = [];
     let ss = 0;
-    res.forEach((element) => {
-      element.style.display = "none";
-    });
-      
+    contaner.classList.add("active")
+    
     if (
       outputs.length == 3 ||
       (outputs.length / 2 != 0 && outputs.length > 2)
-    ) {
+      ) {
       for (let i = 0; i < outputs.length; i++) {
         result[i] = outputs[i][2];
       }
@@ -147,14 +132,12 @@ inputs.forEach((e, i) => {
       } else if (result[1] == "-") {
         ss = result[0] - result[2];
       }
-
-      res.forEach((element) => {
-        element.style.display = "flex";
-      });
-      res[0].innerText = base10_to2(Number(ss.toFixed(2)));
-      res[1].innerText = base10_to8(Number(ss.toFixed(2)));
-      res[2].innerText = Number(ss.toFixed(2));
-      res[3].innerText = base10_to16(Number(ss.toFixed(2))).toUpperCase();
+      
+      contaner.classList.remove("active")
+      res[0].value = base10_to2(Number(ss.toFixed(2)));
+      res[1].value = base10_to8(Number(ss.toFixed(2)));
+      res[2].value = Number(ss.toFixed(2));
+      res[3].value = base10_to16(Number(ss.toFixed(2))).toUpperCase();
     }
   });
 });
