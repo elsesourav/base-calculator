@@ -130,7 +130,7 @@ inputs.forEach((e, i) => {
     res.forEach((element) => {
       element.style.display = "none";
     });
-     
+      
     if (
       outputs.length == 3 ||
       (outputs.length / 2 != 0 && outputs.length > 2)
