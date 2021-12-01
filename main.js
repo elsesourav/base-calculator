@@ -127,11 +127,10 @@ inputs.forEach((e, i) => {
 
     let result = [];
     let ss = 0;
-    console.log(outputs);
     res.forEach((element) => {
-      element.innerHTML = ss.toFixed();
-      element.style.display = "flex";
+      element.style.display = "none";
     });
+     
     if (
       outputs.length == 3 ||
       (outputs.length / 2 != 0 && outputs.length > 2)
