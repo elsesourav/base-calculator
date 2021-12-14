@@ -148,3 +148,15 @@ span::before {
   padding: 5px;
   border-radius: 3px;
 }
+#coppy{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  color: #000000;
+  font-family: sans-serif;
+  font-size: .9rem;
+}
+#coppy::first-letter{
+  color: #ffffff;
+  font-size: 1rem;
+}
