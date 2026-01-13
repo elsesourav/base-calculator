@@ -2,7 +2,7 @@
 
 A multi-base calculator that allows arithmetic operations across different number systems with real-time conversion.
 
-## 🚀 Features
+## Features
 
 - Supports:
   - Binary (Base 2)
@@ -23,7 +23,7 @@ A multi-base calculator that allows arithmetic operations across different numbe
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 1. User enters an expression in any base input.
 2. The input is validated using base-specific patterns.
@@ -33,7 +33,7 @@ A multi-base calculator that allows arithmetic operations across different numbe
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML
 - CSS
@@ -42,14 +42,14 @@ A multi-base calculator that allows arithmetic operations across different numbe
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Decimal fractions are limited when using BigInt-based conversion.
 - Very long expressions may affect performance.
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
 - Full fractional (decimal point) support in BigInt mode
 - Keyboard button UI
@@ -59,6 +59,6 @@ A multi-base calculator that allows arithmetic operations across different numbe
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and free to use for learning and personal projects.
